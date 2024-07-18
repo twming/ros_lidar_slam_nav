@@ -55,19 +55,17 @@ while not rospy.is_shutdown():
 
 	##### Send laserdata to ThingSpeak #####
 	# https://api.thingspeak.com/update?api_key=<key>&field1=0
-
+	# https://api.thingspeak.com/update?api_key=xxxxxxxxxxxxxxxxx&field1=xx&field2=xx
+	
 	# build the payload string
 	tPayload = "field1=" + str(data1) + "&field2=" + str(data2) + "&field3=" + str(data3) + "&field4=" + str(data4) + "&field5=" + str(data5) + "&field6=" + str(data6) + "&field7=" + str(data7)
 
 	# attempt to publish this data to the topic 
-	
-	#https://api.thingspeak.com/update?api_key=xxxxxxxxxxxxxxxxx&field1=10&field2=5
 	req="https://api.thingspeak.com/update?api_key="+apiKey+"&"+tPayload
 	response=urllib2.urlopen(req)
 
 	print(response)
-	#response=request.urlopen(req)
-	#print(response)
+	sleep(5)
 	###################################
 	
 

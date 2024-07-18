@@ -116,7 +116,7 @@ while(capture.isOpened()):
 		# Print number of fingers
 		if count_defects == 0:
 			cv2.putText(frame, "ONE : FORWARD", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2,(0,0,255),2)
-			m.linear.x = 0.2
+			m.linear.x = 0.1
 			m.angular.z = 0
 			print('forward')
 		elif count_defects == 1:
@@ -132,7 +132,7 @@ while(capture.isOpened()):
 		elif count_defects == 3:
 			cv2.putText(frame, "FOUR : REVERSE", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2,(0,0,255), 2)
 			m.angular.z = 0
-			m.linear.x = -0.2
+			m.linear.x = -0.1
 			print('reverse')
 		elif count_defects == 4:
 			cv2.putText(frame, "FIVE", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2,(0,0,255), 2)
